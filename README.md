@@ -7,12 +7,12 @@ Deserialization examples
 ========================
 ```python
 with open('example.txt','rb') as file:
-  print deserializer.deserialize(file.read())
+  print ParadoxConvert.deserialize_eu4_text_to_object(file.read())
 ```
 
 Serialization examples
 ======================
 ```python
 with open('example.txt','w+b') as file:
-  file.write(serializer.serialize(an_object))
+  file.write(ParadoxConvert.serialize_object_to_eu4_file(an_object))
 ```
