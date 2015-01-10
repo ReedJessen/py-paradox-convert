@@ -11,6 +11,12 @@ class SerializationTests(unittest.TestCase):
         output = serializer.serialize(input)
         self.assertEquals(cmp(expected_output, output), 0)
 
+    def test_serialize_non_string_type(self):
+        input = [{ 'name': 5.0 }]
+        expected_output = "name=5.0"
+        output = serializer.serialize(input)
+        self.assertEquals(cmp(expected_output, output), 0)
+
     def test_serialize_single_key_multi_value(self):
         input = [{ 'name': ['first', 'second']}]
         expected_output = 'name={\r\n\tfirst\r\n\tsecond\r\n}'
