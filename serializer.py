@@ -14,7 +14,7 @@ def serialize(tokens):
             if isinstance(values[0],list):
                 return key + '={\r\n' + new_indentation + __map_array(values[0],new_indentation) + '\r\n' + indentation + '}'
             else:
-                return key + '=' + values[0]
+                return key + '=' + str(values[0])
         else:
             return key + '=' + __map_array(values,indentation)
 
